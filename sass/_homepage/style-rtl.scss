@@ -1,0 +1,41 @@
+ /*
+-------------------------
+ * Import Fonts
+-------------------------
+ */
+
+ @import url("https://fonts.googleapis.com/css?family=Tajawal:100i,300,400,500,700,900&display=swap");
+
+
+
+ /*
+-------------------------
+ * Import Libraries
+-------------------------
+*/
+
+ @import "../_libraries/bootstrap/bootstrap.rtl.scss";
+ @import "../_libraries/animate/animate.scss";
+ @import "../_libraries/animate/wow.scss";
+ @import "../_libraries/hover/hover.scss";
+ @import "../_libraries/swiper/swiper.scss";
+ @import "../_libraries/line-awesome/line-awesome.scss";
+ @import "../_libraries/font-awesome/all.scss";
+ @import "../_libraries/magnific-popup/magnific-popup.scss";
+
+
+
+
+ /*
+-------------------------
+ * Import Partials
+-------------------------
+*/
+ @import "../_partials/direction-rtl";
+ @import "../_partials/variables";
+ @import "../_partials/mixins";
+ @import "../_partials/common";
+ @import "../_partials/footer";
+ @import "../_partials/header";
+ @import "homepage-rtl.scss";
+ @import "_responsive.scss";

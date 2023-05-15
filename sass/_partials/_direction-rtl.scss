@@ -1,0 +1,21 @@
+$direction           :rtl;
+$opposite-direction   :ltr;
+
+$start-direction     :right;
+$end-direction       :left;
+
+$transform-direction :-1;
+
+$before: after;
+$after: before;
+ 
+
+@function border-rtl($top_left, $top_right, $bottom_right, $bottom_left) {
+    @return #{$top_right} #{$top_left} #{$bottom_left} #{$bottom_right}
+}
+
+@mixin direction-if($condition) {
+    @if $direction == $condition {
+      @content;
+    }
+}

@@ -1,0 +1,98 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    font-family: $roboto;
+    color: $dark;
+
+    a {
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    ol {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        grid-row-start: 1;
+    }
+
+    main {
+        grid-row-start: 2;
+        overflow: hidden;
+    }
+
+
+    footer {
+        grid-row-start: 4;
+    }
+}
+
+.section-margin {
+    margin-bottom: 120px;
+}
+
+.template-btn {}
+
+@include media-breakpoint-smaller(md) {
+    .section-margin {
+        margin-bottom: 80px;
+    }
+
+    .template-btn {}
+}
+
+@include media-breakpoint-smaller(sm) {
+    .section-margin {
+        margin-bottom: 55px;
+    }
+
+    .template-btn {}
+
+}
+
+/*
+-----------------------
+    Headings 
+-----------------------
+*/
+
+.heading-1 {}
+
+
+.paragraph {}
+
+
+@include media-breakpoint-smaller(md) {
+
+    .heading-1 {}
+
+    .paragraph {}
+}
+
+@include media-breakpoint-smaller(sm) {}
+
+
+/*
+-----------------------
+    component 
+-----------------------
+*/
+
+@include media-breakpoint-smaller(md) {}
+
+@include media-breakpoint-smaller(sm) {}

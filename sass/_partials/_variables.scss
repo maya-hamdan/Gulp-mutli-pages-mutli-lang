@@ -1,0 +1,28 @@
+// Fonts 
+$roboto: null;
+$poppins: null;
+$almarai: "Almarai", sans-serif;
+
+@if $direction==ltr {
+    $roboto: "Roboto",
+        sans-serif;
+    $poppins: "Poppins",
+        sans-serif; 
+}
+
+@if $direction==rtl {
+    $roboto: "Tajawal",
+        sans-serif;
+    $poppins: "Tajawal",
+        sans-serif; 
+}
+
+// Colors
+$white: #FFFFFF;
+$black: #000000;
+
+//palette
+$primary: #34374C;
+$accent: #EE2B47;
+$dark: #2C2E3E;
+$light:#F6F6F6;

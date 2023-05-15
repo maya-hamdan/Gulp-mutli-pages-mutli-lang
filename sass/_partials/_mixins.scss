@@ -1,0 +1,154 @@
+/*
+ * Mixins
+ */
+@mixin text-hover($color) { 
+    width: fit-content; 
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box; 
+
+    &:before {
+        content: "";
+        height: 1px;
+        left: 0;
+        width: 1px;
+        position: absolute;
+        transition: width 1s ease, background-color 1s ease;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0;
+    }
+
+    &:hover {
+        color: $color;
+        transition: color 1s ease;
+        cursor: pointer;
+
+        &:before {
+            width: 100%;
+            background-color: $color;
+        }
+    }
+
+    &:focus {
+        &:before {
+            width: 100%;
+            background-color: $color;
+        }
+    }
+}
+
+@mixin text-overflow($lines){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines; 
+    -webkit-box-orient: vertical;
+}
+
+@mixin placeholder($color, $font-size) {
+    &::-webkit-input-placeholder {
+        font-size: $font-size;
+        color: $color;
+    }
+
+    &:-moz-placeholder {
+        font-size: $font-size;
+        color: $color;
+    }
+
+    &::-moz-placeholder {
+        font-size: $font-size;
+        color: $color;
+    }
+
+    &:-ms-input-placeholder {
+        font-size: $font-size;
+        color: $color;
+    }
+}
+
+@mixin bootstrap-input-focus($color) {
+    &:focus {
+        border-color: $color;
+        box-shadow: 0 1px 1px $color inset, 0 0 8px $color;
+        outline: 0 none;
+    }
+}
+
+@mixin fontAwesome($code) {
+    content: $code;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+
+%max-content {
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
+}
+
+$grid-breakpoints: (xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+//min
+@mixin media-breakpoint-greater($breakpoint) {
+
+    // If the key exists in the map
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+
+        // Prints a media query based on the value
+        @media (min-width: map-get($grid-breakpoints, $breakpoint) + 1) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        +"Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+    }
+}
+
+@mixin media-breakpoint-smaller($breakpoint) {
+
+    // If the key exists in the map
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+
+        // Prints a media query based on the value
+        @media (max-width: map-get($grid-breakpoints, $breakpoint) - 1) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        +"Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+    }
+}
+
+@mixin media-breakpoint-between($breakpoint1, $breakpoint2) {
+
+    // If the key exists in the map
+    @if map-has-key($grid-breakpoints, $breakpoint1) and map-has-key($grid-breakpoints, $breakpoint2) {
+
+        // Prints a media query based on the value
+        @media (min-width: map-get($grid-breakpoints, $breakpoint1)) and (max-width: map-get($grid-breakpoints, $breakpoint2)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint1} #{$breakpoint2}`. "
+        +"Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+    }
+}
+
+ 

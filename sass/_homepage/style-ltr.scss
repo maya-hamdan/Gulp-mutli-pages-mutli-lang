@@ -1,0 +1,42 @@
+ /*
+-------------------------
+ * Import Fonts
+-------------------------
+ */
+
+ @import url("https://fonts.googleapis.com/css?family=Roboto:100i,300,400,500,700,900&display=swap");
+ @import url("https://fonts.googleapis.com/css?family=Poppins:100i,300,400,500,700,900&display=swap");
+
+
+
+ /*
+-------------------------
+ * Import Libraries
+-------------------------
+*/
+
+ @import "../_libraries/bootstrap/bootstrap.rtl.scss";
+ @import "../_libraries/animate/animate.scss";
+ @import "../_libraries/animate/wow.scss";
+ @import "../_libraries/hover/hover.scss";
+ @import "../_libraries/swiper/swiper.scss";
+ @import "../_libraries/line-awesome/line-awesome.scss";
+ @import "../_libraries/font-awesome/all.scss";
+ @import "../_libraries/magnific-popup/magnific-popup.scss";
+
+
+
+
+ /*
+-------------------------
+ * Import Partials
+-------------------------
+*/
+ @import "../_partials/direction-ltr";
+ @import "../_partials/variables";
+ @import "../_partials/mixins";
+ @import "../_partials/common";
+ @import "../_partials/footer";
+ @import "../_partials/header";
+ @import "homepage-ltr.scss";
+ @import "_responsive.scss";
